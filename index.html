@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+  <meta charset="UTF-8">
+  <title>VPN Kody</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; text-align: center; }
+    input { width: 100%; padding: 1em; font-size: 1.1em; }
+    #status { margin-top: 1em; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <h2>📡 VPN Kody:</h2>
+  <input type="text" id="vpnCode" value="ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpqRE11cDV4ZlJMRENsM1o2YUh5NVZi@193.235.146.116:54158" readonly>
+  <p id="status">🔄 Kod göçürilýär...</p>
+
+  <script>
+    window.onload = function() {
+      const input = document.getElementById("vpnCode");
+      input.select();
+      input.setSelectionRange(0, 99999); // iOS üçin
+      document.execCommand("copy");
+      document.getElementById("status").innerText = "✅ Kod üstünlikli göçürildi!";
+    }
+  </script>
+</body>
+</html>
